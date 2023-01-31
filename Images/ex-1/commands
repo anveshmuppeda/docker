@@ -1,0 +1,24 @@
+Run an instance of the new image webapp-color:lite and publish port 8080 on the container to 8383 on the host.
+docker run -p 8383:8080 webapp-color:lite
+
+docker run -p 8282:8080 webapp-color
+
+docker build -t webapp-color .
+
+
+docker run python:3.6 cat /etc/*release*
+
+
+docker login -u anvesh35
+
+
+When you build them, using
+$docker build -t <hub-user>/<repo-name>[:<tag>]
+
+By re-tagging an existing local image
+$docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]
+
+By using
+$docker commit <existing-container> <hub-user>/<repo-name>[:<tag>] to commit changes
+
+$ docker push <hub-user>/<repo-name>:<tag>

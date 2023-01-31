@@ -1,0 +1,72 @@
+$docker run nginx
+run a container from an image
+
+$docker ps
+list all running containers with container details
+
+
+$docker ps -a
+list all running containers along with stopped
+
+$docker stop container-name/con_ID
+to stop the conatiners
+
+
+$docker rm container_name/id
+it will remove permenantly
+
+$docker images
+to list images in our server
+
+$docker rmi image
+it will remove all conatiners will removed
+
+$docker pull image
+it will pull only image, not start any conatienr
+
+$docker exec conatiner_name cat /etc/hosts
+to login container
+
+
+$docker run image
+$docker run -d image
+running image on detach mode
+
+$docker run -it image bash
+to login to container
+
+
+docker rmi image-name
+docker rm container-name
+
+run a conatiner using image and name it as webapp
+$docker run -d --name webapp nginx:1.14-alpine
+
+docker rmi $(docker images -aq)
+to remove all images at a time(if no conatiner is associated with that image).
+
+volume mapping
+docker run myaql
+docker stop mysql
+docker rm mysql
+
+docker run -v /opt/datadir:/var/lib/mysql mysql
+
+
+$docker inspect conatiner_id/name
+to list all the details about contaner
+
+to view logs
+$docker logs container_id/name
+
+
+$docker run ubuntu sleep 100
+$docker run -d ubuntu sleep 100
+first will run directly and we can't exit from that promt tilll the container get stopped
+second will run in detach mode and we can come out of the prompt immediatly
+
+if you run in detach mode and you want go back to promt which means same as first command
+docker attach conatiner_id
+
+$docker run timer
+it will print time stamp at every second

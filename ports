@@ -1,0 +1,25 @@
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                           NAMES
+e5b7c0e80d39        nginx:alpine        "/docker-entrypoint.…"   45 seconds ago      Up 43 seconds       0.0.0.0:3456->3456/tcp, 0.0.0.0:38080->80/tcp   nice_williams
+
+ports exposed
+3456 & 80
+
+ports published
+3456 & 38080
+
+
+Q: Run an instance of kodekloud/simple-webapp with a tag blue and map port 8080 on the container to 38282 on the host.
+
+Ans: docker run -p 38282:8080 kodekloud/simple-webapp:blue
+
+
+docker inspect conatainer_id
+
+docker run -p 8080:8080 jenkins:2.60.3
+
+docker pull jenkins:2.60.3
+
+docker run -p 8080:8080 -v /root/my-jenkins-data:/var/jenkins_home jenkins
+
+docker run -p 38282:8080 kodekloud/simple-webapp:blue

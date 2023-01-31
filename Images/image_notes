@@ -1,0 +1,50 @@
+https://docs.docker.com/docker-hub/repos/#:~:text=To%20push%20an%20image%20to,docs%2Fbase%3Atesting%20).
+
+docker login -u anvesh35
+
+When you build them, using
+$docker build -t <hub-user>/<repo-name>[:<tag>]
+
+By re-tagging an existing local image
+$docker tag <existing-image> <hub-user>/<repo-name>[:<tag>]
+
+By using
+$docker commit <existing-container> <hub-user>/<repo-name>[:<tag>] to commit changes
+
+$ docker push <hub-user>/<repo-name>:<tag>
+
+
+
+
+
+
+FROM ubuntu
+RUN apt-get update
+RUN apt install python3-pip
+RUN apt-get install python-pip
+RUN pip install flask
+COPY app.py /opt/app.py
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
+
+RUN apt-get install -y python
+
+
+import os
+from flask import Flask
+app = Flask(_name_)
+
+@app.route("/")
+def main():
+    return "Weclome"
+
+if __name__=="__main__":
+   app.run()
+
+
+
+docker build -t anvesh35/anvesh:v1
+docker build . -f Dockerfile -t anvesh35/anvesh:v1
+
+docker tag anvesh35/anvesh anvesh35/anvesh:v1
+
+docker commit anvesh anvesh35/anvesh:v1

@@ -1,0 +1,43 @@
+https://k21academy.com/docker-kubernetes/docker-container-lifecycle-management/
+https://docs.docker.com/engine/reference/commandline/container_pause/
+
+Docker Container Lifecycle Management
+There are different stages when we create a Docker container which is known as Docker Container Lifecycle. Some of the states are:
+
+Created: A container that has been created but not started
+Running: A container running with all its processes
+Paused: A container whose processes have been paused
+Stopped: A container whose processes have been stopped
+Deleted: A container in a dead state
+
+
+$ docker create --name <container name> <image name>
+$ docker start <container name>
+$ docker run -it --name <container name> <image name>
+$ docker pause <container name>
+$ docker unpause <container name>
+$ docker stop <container name>
+
+To stop all the running containers we can use the following command:
+$ docker stop $(docker container ls –aq)
+
+$ docker stop <container name>
+
+$ docker rm <container name>
+$ docker rm $(docker ps -aq)
+
+$ docker kill <container name>
+
+
+
+Difference Between Docker Pause And Docker Stop container
+The docker pause command suspends all processes in the specified containers. Traditionally, when suspending a process the SIGSTOP signal is used, which is observable by the process being suspended. Also, the memory portion would be there while the container is paused and again the memory is used when the container is resumed.
+When we use the docker stop command, the main process inside the container receives SIGTERM signal, and after some time, SIGKILL. Also, it will release the memory used after the container is stopped.
+SIGTERM is the signal of termination. The intention is to kill the process, gracefully or not, but to first allow it a chance to clean up.
+SIGKILL is the kill signal. The only behaviour is to kill the process, immediately.
+SIGSTOP is the pause signal. The only behaviour is to pause the process. The shell uses pausing (and its counterpart, resuming via SIGCONT) to implement job control.
+
+
+Docker rm Vs. Docker Kill
+docker container rm: Using docker rm, we can remove one or more containers from the host node and for doing container name or ID can be used.
+docker container kill: The main process inside each container specified will be sent SIGKILL or any signal specified with option –signal.
