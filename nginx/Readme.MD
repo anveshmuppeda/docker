@@ -10,3 +10,7 @@ docker ps -a
 ```  
 
 The last step is to visit the public DNS name in your browser
+
+
+## Reference:  
+https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-docker/
