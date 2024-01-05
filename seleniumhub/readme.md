@@ -9,4 +9,7 @@ docker-compose -f docker-compose.yaml up -d
 ``` 
 
 To stop the execution, hit Ctrl+C, and then c  
-```docker-compose -f docker-compose.yaml down```
+
+```
+docker-compose -f docker-compose.yaml down
+```
