@@ -8,5 +8,5 @@ Add the `-d` flag at the end for detached execution
 docker-compose -f docker-compose.yaml up -d 
 ``` 
 
-To stop the execution, hit Ctrl+C, and then c
+To stop the execution, hit Ctrl+C, and then c  
 ```docker-compose -f docker-compose.yaml down```
